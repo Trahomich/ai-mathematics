@@ -9,7 +9,7 @@
 Языковая модель — это распределение вероятностей над последовательностями токенов:
 
 $$
-P(w_1, w_2, \ldots, w_T) = \prod_{t=1}^{T} P(w_t \mid w_{<t})
+P(w_1, w_2, \ldots, w_T) = \prod_{t=1}^{T} P(w_t \mid w_{1:t-1})
 $$
 
 **Цель**: для каждого следующего токена предсказать распределение по всему словарю.
@@ -33,7 +33,7 @@ BPE (Byte Pair Encoding) — итеративное слияние частых 
 ### Определение
 
 $$
-\mathcal{L} = -\frac{1}{T}\sum_{t=1}^{T} \log P(w_t \mid w_{<t}; \theta)
+\mathcal{L} = -\frac{1}{T}\sum_{t=1}^{T} \log P(w_t \mid w_{1:t-1}; \theta)
 $$
 
 Это **кросс-энтропия** между истинным распределением (one-hot) и предсказанием модели:
@@ -47,7 +47,7 @@ $$
 ### Связь с perplexity
 
 $$
-\text{PPL} = e^{\mathcal{L}} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log P(w_t \mid w_{<t})\right)
+\text{PPL} = e^{\mathcal{L}} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log P(w_t \mid w_{1:t-1})\right)
 $$
 
 | Модель | Perplexity |
@@ -83,7 +83,7 @@ $$
 Используется в GPT: предсказываем следующий токен.
 
 $$
-\mathcal{L}_{\text{CLM}} = -\mathbb{E}\left[\log P(w_t \mid w_{<t})\right]
+\mathcal{L}_{\text{CLM}} = -\mathbb{E}\left[\log P(w_t \mid w_{1:t-1})\right]
 $$
 
 ### Масштабы предобучения
