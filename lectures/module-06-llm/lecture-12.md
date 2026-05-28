@@ -262,7 +262,7 @@ $$
 2. **Ранний признак** — если val loss продолжает падать — модель мала для данных
 3. **Инфраструктура** — обучение LLaMA-2 70B = 1,724,352 GPU-часов на A100
 
-### Закон Ш-installation (Emergent Abilities)
+### Масштабирование и Emergent Abilities
 
 Некоторые способности появляются скачкообразно при определённом масштабе:
 
@@ -279,7 +279,7 @@ $$
 Размер модели в разных форматах:
 
 $$
-\text{Memory} = \frac{N \times \text{bytes\_per\_param}}{10^9} \text{ GB}
+\text{Memory} = \frac{N \times \text{bytes per param}}{10^9} \text{ GB}
 $$
 
 | Формат | Байт/параметр | LLaMA-2 7B | LLaMA-2 70B |
@@ -294,7 +294,7 @@ $$
 На каждом слое хранятся ключи и значения для всех предыдущих токенов:
 
 $$
-\text{KV Cache} = 2 \times n_{\text{layers}} \times d_{\text{model}} \times n_{\text{heads}} \times \text{seq\_len} \times \text{bytes}
+\text{KV Cache} = 2 \times n_{\text{layers}} \times d_{\text{model}} \times n_{\text{heads}} \times \text{seq-len} \times \text{bytes}
 $$
 
 Для LLaMA-2 70B при seq_len = 4096, fp16:
