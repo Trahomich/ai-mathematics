@@ -75,15 +75,15 @@ XOR — это логическая операция: «либо одно, ли�
 Многослойный перцептрон (MLP) — последовательность линейных преобразований и нелинейностей:
 
 $$
-\mathbf{h}^{(1)} = \sigma_1\!\left(\mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)}\right)
+\mathbf{h}^{(1)} = \sigma_1\left(\mathbf{W}^{(1)} \mathbf{x} + \mathbf{b}^{(1)}\right)
 $$
 
 $$
-\mathbf{h}^{(2)} = \sigma_2\!\left(\mathbf{W}^{(2)} \mathbf{h}^{(1)} + \mathbf{b}^{(2)}\right)
+\mathbf{h}^{(2)} = \sigma_2\left(\mathbf{W}^{(2)} \mathbf{h}^{(1)} + \mathbf{b}^{(2)}\right)
 $$
 
 $$
-\hat{\mathbf{y}} = \sigma_{\text{out}}\!\left(\mathbf{W}^{(3)} \mathbf{h}^{(2)} + \mathbf{b}^{(3)}\right)
+\hat{\mathbf{y}} = \sigma_{\text{out}}\left(\mathbf{W}^{(3)} \mathbf{h}^{(2)} + \mathbf{b}^{(3)}\right)
 $$
 
 Где:
@@ -174,7 +174,7 @@ $$
 Пусть $\sigma$ — непостоянная, ограниченная, непрерывная функция активации. Тогда для любого $\varepsilon > 0$ и любой непрерывной функции $f: [0,1]^d \to \mathbb{R}$ существует MLP с одним скрытым слоем:
 
 $$
-g(\mathbf{x}) = \sum_{j=1}^{N} \alpha_j\, \sigma\!\left(\mathbf{w}_j^T \mathbf{x} + b_j\right)
+g(\mathbf{x}) = \sum_{j=1}^{N} \alpha_j\, \sigma\left(\mathbf{w}_j^T \mathbf{x} + b_j\right)
 $$
 
 такой что $|g(\mathbf{x}) - f(\mathbf{x})| < \varepsilon$ для всех $\mathbf{x} \in [0,1]^d$.
