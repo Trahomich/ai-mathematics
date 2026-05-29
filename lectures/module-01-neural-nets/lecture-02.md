@@ -206,7 +206,11 @@ $$
 
 ### ReLU — почему она работает
 
-**Градиент**: $\frac{\partial}{\partial z}\text{ReLU}(z) = \begin{cases} 1 & z > 0 \\ 0 & z \leq 0 \end{cases}$
+**Градиент**:
+
+$$
+\text{ReLU}'(z) = \begin{cases} 1 & z \gt 0 \\ 0 & z \leq 0 \end{cases}
+$$
 
 Преимущества перед sigmoid:
 - Нет насыщения при $z > 0$ → градиент не исчезает
