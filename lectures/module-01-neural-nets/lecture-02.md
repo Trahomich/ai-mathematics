@@ -220,10 +220,10 @@ $$
 ### GELU — активация современных LLM
 
 $$
-\text{GELU}(z) = z \cdot \Phi(z) = z \cdot \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{z}{\sqrt{2}}\right)\right]
+\text{GELU}(z) = z \cdot \Phi(z) = z \cdot \frac{1}{2}\left[1 + \text{erf}\left(\frac{z}{\sqrt{2}}\right)\right]
 $$
 
-Приближение: $\text{GELU}(z) \approx 0.5\,z\!\left(1 + \tanh\!\left[\sqrt{2/\pi}(z + 0.044715\,z^3)\right]\right)$
+Приближение: $\text{GELU}(z) \approx 0.5\,z\left(1 + \tanh\left[\sqrt{2/\pi}(z + 0.044715\,z^3)\right]\right)$
 
 GELU — «мягкая» версия ReLU: плавно зануляет отрицательные значения с вероятностью, пропорциональной величине.
 
